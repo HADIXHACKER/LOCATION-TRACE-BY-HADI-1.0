@@ -15,6 +15,8 @@
 
 ➡️ pip install requests
 
+ . pip install requests phonenumbers pyfiglet fake_useragent python-whois dnspython
+
 ➡️ git clone https://github.com/HADIXHACKER/LOCATION-TRACE-BY-HADI-1.0.git
 
 ➡️ ls
