@@ -30,13 +30,22 @@ def clear():
 def banner():
     ab = pyfiglet.figlet_format("HADI_X_HACKER", font="slant")
     print(f"{Gr}{ab}")
+    print(f"{Wh}{Gr}===================================================")
+    print(f"{Re}[{Wh}INFO{Re}] {Gr}Tool By: HADI_X_HACKER")
+    print(f"{Re}[{Wh}INFO{Re}] {Gr}Telegram: @HADI_X_HACKER321")
+    print(f"{Re}[{Wh}INFO{Re}] {Gr}Tool Status: {Wh}Working")
+    print(f"{Re}[{Wh}INFO{Re}] {Gr}Tool Value: {Wh}Paid Script")
+    print(f"{Re}[{Wh}INFO{Re}] {Gr}Valid Time: {Wh}6 months")
+    print(f"{Wh}{Gr}===================================================")
 
+# Smooth Text Function for Banner Animation
 def to(s):
     for char in s + "\n":
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(500.0 / 8000)
 
+# Main Banner Info
 def show_banner():
     to(f"{Re}Script Type >> {Gr}HADI_X_HACKER Location Tool 🔥")
     to(f"{Re}Telegram >> {Gr}@HADI_X_HACKER321")
@@ -46,48 +55,40 @@ def show_banner():
     to(f"{Re}Time >> {Gr}6 months")
     print(f"\n{Gr}[{Re}Note{Gr}]: {Re}This is a fully functional tool for Termux!")
 
-# Example Functions
+# Improved IP Tracker Function with Error Handling
 def IP_Track():
     ip = input(f"{Wh}\nEnter IP target: {Gr}")
     print()
     print(f"{Wh}============= {Gr}SHOW INFORMATION IP ADDRESS {Wh}=============")
     try:
         req_api = requests.get(f"http://ipwho.is/{ip}")
-        ip_data = json.loads(req_api.text)
-        time.sleep(2)
+        ip_data = req_api.json()
+        if req_api.status_code != 200:
+            print(f"{Re}Error: Could not fetch data for IP: {ip}")
+            return
         print(f"{Wh}\nIP target       :{Gr}", ip)
-        print(f"{Wh}Type IP         :{Gr}", ip_data["type"])
-        print(f"{Wh}Country         :{Gr}", ip_data["country"])
-        print(f"{Wh}Country Code    :{Gr}", ip_data["country_code"])
-        print(f"{Wh}City            :{Gr}", ip_data["city"])
-        print(f"{Wh}Continent       :{Gr}", ip_data["continent"])
-        print(f"{Wh}Continent Code  :{Gr}", ip_data["continent_code"])
-        print(f"{Wh}Region          :{Gr}", ip_data["region"])
-        print(f"{Wh}Region Code     :{Gr}", ip_data["region_code"])
-        print(f"{Wh}Latitude        :{Gr}", ip_data["latitude"])
-        print(f"{Wh}Longitude       :{Gr}", ip_data["longitude"])
-        lat = int(ip_data['latitude'])
-        lon = int(ip_data['longitude'])
+        print(f"{Wh}Type IP         :{Gr}", ip_data.get("type", "N/A"))
+        print(f"{Wh}Country         :{Gr}", ip_data.get("country", "N/A"))
+        print(f"{Wh}Country Code    :{Gr}", ip_data.get("country_code", "N/A"))
+        print(f"{Wh}City            :{Gr}", ip_data.get("city", "N/A"))
+        print(f"{Wh}Continent       :{Gr}", ip_data.get("continent", "N/A"))
+        print(f"{Wh}Continent Code  :{Gr}", ip_data.get("continent_code", "N/A"))
+        print(f"{Wh}Region          :{Gr}", ip_data.get("region", "N/A"))
+        print(f"{Wh}Region Code     :{Gr}", ip_data.get("region_code", "N/A"))
+        print(f"{Wh}Latitude        :{Gr}", ip_data.get("latitude", "N/A"))
+        print(f"{Wh}Longitude       :{Gr}", ip_data.get("longitude", "N/A"))
+        lat = ip_data.get('latitude', '0')
+        lon = ip_data.get('longitude', '0')
         print(f"{Wh}Maps            :{Gr}", f"https://www.google.com/maps/@{lat},{lon},8z")
-        print(f"{Wh}EU              :{Gr}", ip_data["is_eu"])
-        print(f"{Wh}Postal          :{Gr}", ip_data["postal"])
-        print(f"{Wh}Calling Code    :{Gr}", ip_data["calling_code"])
-        print(f"{Wh}Capital         :{Gr}", ip_data["capital"])
-        print(f"{Wh}Borders         :{Gr}", ip_data["borders"])
-        print(f"{Wh}Country Flag    :{Gr}", ip_data["flag"]["emoji"])
-        print(f"{Wh}ASN             :{Gr}", ip_data["connection"]["asn"])
-        print(f"{Wh}ORG             :{Gr}", ip_data["connection"]["org"])
-        print(f"{Wh}ISP             :{Gr}", ip_data["connection"]["isp"])
-        print(f"{Wh}Domain          :{Gr}", ip_data["connection"]["domain"])
-        print(f"{Wh}ID              :{Gr}", ip_data["timezone"]["id"])
-        print(f"{Wh}ABBR            :{Gr}", ip_data["timezone"]["abbr"])
-        print(f"{Wh}DST             :{Gr}", ip_data["timezone"]["is_dst"])
-        print(f"{Wh}Offset          :{Gr}", ip_data["timezone"]["offset"])
-        print(f"{Wh}UTC             :{Gr}", ip_data["timezone"]["utc"])
-        print(f"{Wh}Current Time    :{Gr}", ip_data["timezone"]["current_time"])
+        print(f"{Wh}EU              :{Gr}", ip_data.get("is_eu", "N/A"))
+        print(f"{Wh}Postal          :{Gr}", ip_data.get("postal", "N/A"))
+        print(f"{Wh}Calling Code    :{Gr}", ip_data.get("calling_code", "N/A"))
+        print(f"{Wh}Capital         :{Gr}", ip_data.get("capital", "N/A"))
+        print(f"{Wh}Country Flag    :{Gr}", ip_data.get("flag", {}).get("emoji", "N/A"))
     except Exception as e:
         print(f"{Re}Error: {e}")
 
+# Show Your Public IP Function
 def showIP():
     response = requests.get('https://api.ipify.org/')
     show_ip = response.text
@@ -95,19 +96,20 @@ def showIP():
     print(f"\n{Wh}[{Gr} + {Wh}] Your IP Address: {Gr}{show_ip}")
     print(f"\n{Wh}===============================================")
 
-# Advanced Functions
+# Check VPN Status Function
 def check_vpn_status():
     ip = input(f"{Wh}Enter IP to check VPN status: {Gr}")
     response = requests.get(f"https://vpnapi.io/api/{ip}")
     if response.status_code == 200:
         vpn_data = response.json()
-        if vpn_data["security"]["is_vpn"]:
+        if vpn_data.get("security", {}).get("is_vpn", False):
             print(f"{Wh}[{Re}-{Wh}] VPN Detected: {Gr}Yes")
         else:
             print(f"{Wh}[{Gr}+{Wh}] VPN Detected: {Re}No")
     else:
         print(f"{Re}Error fetching VPN status.")
 
+# Show System Information
 def system_info():
     print(f"{Wh}System Info:")
     uname = platform.uname()
@@ -119,6 +121,7 @@ def system_info():
     print(f"{Wh}Processor: {Gr}{uname.processor}")
     print(f"{Wh}Platform: {Gr}{platform.platform()}")
 
+# Shorten URL
 def shorten_url():
     url = input(f"{Wh}Enter the URL to shorten: {Gr}")
     response = requests.get(f"https://api.shrtco.de/v2/shorten?url={url}")
@@ -151,8 +154,13 @@ def option():
             print(f"{Re}[Error] Invalid choice.")
     except ValueError:
         print(f"{Re}[Error] Please enter a valid number.")
+    
+    # Option to return to main menu after an action
+    input(f"\nPress Enter to return to the main menu...")
 
+# Main function to run the script
 if __name__ == "__main__":
-    banner()
-    option()
+    while True:
+        banner()
+        option()
         
