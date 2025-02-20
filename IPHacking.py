@@ -31,7 +31,7 @@ a_aB_s = '\033[2;39m'
 Ba_bS = '\033[2;36m'
 Ya_Bs = '\033[1;34m'
 S_aBs = '\033[1;33m'
-ab = pyfiglet.figlet_format("OLD-HACKER")
+ab = pyfiglet.figlet_format("HADI_X_HACKER")
 print(a_bSa + ab)
 
 
@@ -314,7 +314,7 @@ def option():
 ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⠇
 ⠀⠀⠀⠀⠀⠀⢸⣿⣿⡿⠀⠀⠀⢀⣴⣿⣿⣿⣿⣟⣋⣁⣀⣀
 
-              {Wh}[ + ]  𝐂𝐎𝐃𝐄 𝐁𝐘 OLD-HACKER  [ + ]
+              {Wh}[ + ]  𝐂𝐎𝐃𝐄 𝐁𝐘 HADI_X_HACKER [ + ]
     """)
 
     stderr.writelines(f"\n\n\n{option_text()}")
@@ -326,8 +326,8 @@ def run_banner():
     stderr.writelines(f"""{Wh}
          .-.
        .'   `.          {Wh}--------------------------------
-       :g g   :         {Wh}| OLD-HACKER - TRACKER - IP ADDRESS {Wh}|
-       : o    `.        {Wh}|       {Gr}𝐎𝐖𝐍𝐄𝐑 OLD-HACKER    {Wh}|
+       :g g   :         {Wh}| HADI_X_HACKER - TRACKER - IP ADDRESS {Wh}|
+       : o    `.        {Wh}|       {Gr}𝐎𝐖𝐍𝐄𝐑 HADI_X_HACKER    {Wh}|
       :         ``.     {Wh}--------------------------------
      :             `.
     :  :         .   `.
