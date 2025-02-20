@@ -28,8 +28,8 @@ def clear():
 
 # Banner Creation
 def banner():
-    ab = pyfiglet.figlet_format("HADI_X_HACKER")
-    print(f"{Ma}{ab}")
+    ab = pyfiglet.figlet_format("HADI_X_HACKER", font="slant")
+    print(f"{Gr}{ab}")
 
 def to(s):
     for char in s + "\n":
@@ -38,13 +38,13 @@ def to(s):
         time.sleep(500.0 / 8000)
 
 def show_banner():
-    to(f"{Re}Script Type>> {Gr}HADI_X_HACKER Location Tool 🔥")
+    to(f"{Re}Script Type >> {Gr}HADI_X_HACKER Location Tool 🔥")
     to(f"{Re}Telegram >> {Gr}@HADI_X_HACKER321")
     to(f"{Re}Creator >> {Gr}HADI_X_HACKER")
     to(f"{Re}Tool Status >> {Gr}Working")
     to(f"{Re}Tool Value >> {Gr}Paid Script")
     to(f"{Re}Time >> {Gr}6 months")
-    print('\n')
+    print(f"\n{Gr}[{Re}Note{Gr}]: {Re}This is a fully functional tool for Termux!")
 
 # Example Functions
 def IP_Track():
@@ -155,4 +155,4 @@ def option():
 if __name__ == "__main__":
     banner()
     option()
-    
+        
